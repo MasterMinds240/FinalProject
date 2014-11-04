@@ -1,5 +1,6 @@
 <?php
 	include "../includes/phpBBHeader.php";
+	include HOME_DIR . "includes/db_config.php";
 	
 	/*$cp = new custom_profile();
 	$error = $cp_data = $cp_error = array();
@@ -16,28 +17,43 @@
 
 	// set the user to inactive and the reason to "fully registered"
 	$user_type = USER_NORMAL;
-
+	
+	$queryString = "SELECT max(user_id) FROM phpbb_users";
+	$result = mysqli_query($conn, $queryString) or die(mysqli_error($conn));
+	if($result)
+	{
+		$row = mysqli_fetch_row($result);
+		$user_id = $row[0] + 1;
+	}
+	
+	mysqli_free_result($result);
+	
 	// setup the user array for the new user
 	$user_row = array(
+		'user_id'				=> $user_id,
 		'username'              => request_var('username', ''),
-		'user_password'         => request_var('password', '') == request_var('password_confirm', '') ? (phpbb_hash(request_var('password', ''))) : ($_SESSION['password_confirm'] = false),
+		'user_password'         => (request_var('new_password', '') == request_var('password_confirm', '') ? (phpbb_hash(request_var('password', ''))) : ($_SESSION['password_confirm'] = false)),
 		'user_email'            => request_var('email', ''),
 		'group_id'              => 4,
 		'user_type'             => $user_type,
 		'user_regdate'          => time(),
 	);
-
-	// Register user...
-	$user_id = user_add($user_row, $cp_data);
-
-	// If creating the user failed, display an error
-	if ($user_id === false)
+	
+	$queryString = "INSERT INTO phpbb_users(user_id, username, user_password, user_email, group_id, user_type, user_regdate) VALUES (";
+	foreach($user_row as $value)
 	{
-		trigger_error('NO_USER', E_USER_ERROR);
+		if(is_string($value))
+		{
+			$queryString .= "'" . $value . "',";
+		}
+		else
+		{
+			$queryString .= $value . ",";
+		}
 	}
-				
-	$template->assign_vars(array(
-		// If there were any errors, display them, one on each newline.
-		'ERROR'             => (sizeof($error)) ? implode('<br />', $error) : '',
-	));
+	$queryString = rtrim($queryString, ",");
+	$queryString .= ")";
+	echo $queryString;
+	$result = mysqli_query($conn, $queryString) or die(mysqli_error($conn));
+	mysqli_close($conn);
 ?>
