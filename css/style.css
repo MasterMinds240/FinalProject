@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro);
+body{
+		font: 12 "Trebuchet MS", sans-serif;
+		background: url('images/bg.png');
+		margin:0;
+	}
+	html, body{
+		margin:0;
+	}
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	
+	.wrapper{
+		width:990px;
+		margin:0 auto;
+		height:auto;
+	}
+
+	#shift{
+		/*margin-left: -200px;*/
+	}
+	#title{
+		width: 50%;
+		height: 40px;
+		float: left;
+		color: white;
+		margin-left: 25px;
+	}	
+	#topics {
+		width: 200px;
+		float:left;
+	}
+	#content{
+		width:560px;
+		float:left;
+		margin-left:10px;
+	}
+	.contentBox{
+		height:560px;
+		width:550px;
+		padding:20px;
+		border:1px solid grey;
+		border-radius: 2px;
+		box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.2);
+		background-color:#F9F9F9;
+	}
+	
+	#forumContent{
+		width:175px;
+		float:right;
+		margin-left:10px;
+	}
+	.forumBox{
+		height:560px;
+		width:200px;
+		padding:20px;
+		border:1px solid grey;
+		border-radius: 2px;
+		box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.2);
+		background-color:#F9F9F9;
+		text-align: center;
+	}
+	hr{
+		background-image: url(../images/gauze.png);
+		height: .75em;
+		border: none;
+		margin: .75em 0;
+	}
+	#header{
+		height:95px;
+		background-color:#2E353B;
+		font-size: 27px;	
+	}
+	#account{
+		float:right;
+		height:65px;
+		text-align: center;
+		margin-top:7.5px;
+		color:#FFF;
+		margin-right: 25px;
+	}
+	
+	#logo{
+		margin:15px;
+		height:70px;
+		width:auto;
+		float:left;
+	}
+	
+	#nav{
+		height:30px;
+		background-color:#CCE4F7;
+		margin-bottom: 25px;
+	
+		font-size: 1.2em;
+		font-family: 'Advent Pro', sans-serif;
+		/* width: 16.67%; */
+}
+	nav ul{
+		margin:0;
+		float:left;
+		/* margin-right:10px; */
+	
+		text-align: center;
+		padding: 0;
+		width:  100%;
+}
+	nav ul li{
+		display: inline-block;
+		/* padding-top:5px; */
+		width: 12.67%;
+		/* padding-right: 10%; */
+	
+		align: center;
+		/* align-content: center; */
+		/* text-align: center; */
+}
+	nav ul li a{
+		text-decoration:none;
+		color:black;
+	}
+	nav ul li a:hover{
+		color:grey;
+	}
+	dl dd{
+		font:75%;
+		margin-bottom:35px;
+	}
+#navlist
+	{
+		padding: 10px 0;
+		margin-left: 0;
+		text-align: center;
+	
+		position: relative;
+		/* top: 125px; */
+		/* height: 300px; */
+		/* position: relative; */
+}
+
+	#navlist li
+	{
+		list-style: none;
+		display: inline-block;
+		box-shadow: 5px 5px 5px 5px #888888;
+		height: 200px;
+		width: 25%;
+		padding: 12.5;
+		margin-left: 10px;
+		border: 2px solid black;
+		background: #BBBABA;
+		border-radius: 5px;
+	}
+    #navlist ul{
+			margin:0;
+	}
+	#navlist li a
+	{
+		margin-left: 3px;
+		/* height: 150px; */
+		position: relative;
+		top: 50%;
+		text-decoration: none;
+		
+		/* padding-top: 50%; */
+}
+	
+	#navlist li a:hover
+	{
+		color: white;
+		background: #BBBABA;
+	}
+	
+	#navlist li a:link { color: white; }
+	#navlist li a:visited { color: white; }
+	
+	footer{
+		height:40px;
+		width: 100%;
+		background-color: #2E353B;
+		text-align: center;
+		bottom: 0px;
+		position: absolute;
+		margin-top: 25px;
+		overflow: hidden;
+		/* top: 100px; */
+		color: white;
+	}
+	footer p{
+		margin-top: 10px;
+	}

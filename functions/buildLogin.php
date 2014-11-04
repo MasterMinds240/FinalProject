@@ -1,11 +1,9 @@
 <?php
-	// Includes
-	include_once "phpBBHeader.php";
 	// This function is used to build the login div
 	function buildLogin()
 	{
 		echo "<div id='login'>
-		<form action='".HOME_DIR."login.php' method='post' name='login'>
+		<form action='".HOME_DIR."functions/login.php' method='post' name='login'>
 			Username: <input type='text' name='username'><br>
 			Password: <input type='password' name='password'><br>
 			<input type='submit' name='submitLogin' value='Login'>
@@ -54,7 +52,7 @@
 	else
 	{
 	   echo "Thanks for logging in, " . $user->data['username_clean']
-	   . "<form action='".HOME_DIR."logout.php' method='post' name='logout'>
+	   . "<form action='".HOME_DIR."functions/logout.php' method='post' name='logout'>
 	   <input type='submit' name='submitLogout' value='Logout'>
 	   </form>";
 	}

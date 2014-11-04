@@ -16,7 +16,7 @@
 	$URI_arr = explode("/", $_SERVER['REQUEST_URI']);
 	$homeDir = "";
 	// Iterate through the array starting at the home directory
-	for($i=4; $i<sizeof($URI_arr)-1; $i++)
+	for($i=2; $i<sizeof($URI_arr)-1; $i++)
 	{
 		// Concatenate the parent directory command for each directory after home
 		$homeDir .= "../";
@@ -27,11 +27,11 @@
 	// PHPBB3 Definitions
 	define('IN_PHPBB', true);
 	// Store the location of the PHPBB files
-	$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : HOME_DIR . 'phpBB3/';
+	$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : HOME_DIR . 'forums/';
 	// Store the default file extension
 	$phpEx = substr(strrchr(__FILE__, '.'), 1);
 	// Call the common.php library from the phpBB3 directory
-	include(HOME_DIR . "phpBB3/common." . $phpEx);
+	include(HOME_DIR . "forums/common." . $phpEx);
 
 	// Start PHPBB3 session management
 	$user->session_begin();

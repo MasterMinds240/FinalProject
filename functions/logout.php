@@ -1,6 +1,6 @@
 <?php
 	// Includes
-	include "phpBBHeader.php";
+	include "../includes/phpBBHeader.php";
 	
 	// Use PHPBB's built in session_kill() function to terminate the session
 	$user->session_kill();
@@ -10,5 +10,5 @@
 	session_destroy();
 	
 	// Return the user to homepage
-	header("Location: http://nova.it.rit.edu/~acd3267/240/phpBB3Test/" . HOME_DIR . "index.php");
+	header("Location: http://nova.it.rit.edu/~MasterMinds/index.php");
 ?>

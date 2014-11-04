@@ -1,4 +1,4 @@
-<?php include "phpBBHeader.php";?>
+<?php include "includes/phpBBHeader.php";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 <body>
 <?php 
 	//Once phpBBHeader.php is included, you can call HOME_DIR
-	include HOME_DIR . "buildLogin.php";
+	include HOME_DIR . "functions/buildLogin.php";
 ?>
 </body>
 </html>
